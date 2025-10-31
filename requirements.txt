@@ -6,5 +6,3 @@ scipy
 matplotlib
 altair
 tabulate
-
-

@@ -334,9 +334,12 @@ class SamarthQAEngine:
         trend_table['Total Production (Tonnes)'] = trend_table['Total Production (Tonnes)'].apply(lambda x: f"{x:,.0f}")
         
         summary = f"""
-**Summary of Apparent Impact (LLM Synthesis):**
-The overall production trend for {crop_type_c} crops in {state.title()} was **{prod_trend}**.
-Correlation between Production and Average Annual Rainfall (Pearson $\\rho$): **${correlation}$**.
+**Summary of Apparent Impact (LLM Synthesis):**  
+
+The overall production trend for **{crop_type_c}** crops in **{state.title()}** was **{prod_trend}**.  
+
+Correlation between Production and Average Annual Rainfall (Pearson $\\rho$): **{correlation}**.  
+
 **Apparent Impact:** {impact}
 """
         return "### Query 3 Result: Production Trend & Climate Correlation\n" + summary + "\n**Time Series Data:**\n" + trend_table.to_markdown(index=False, numalign="left", stralign="left") + "\n" + self._get_citation(start_year, end_year, actual_n)
@@ -609,3 +612,4 @@ def main():
 # --- RUN THE APP ---
 if __name__ == "__main__":
     main()
+
